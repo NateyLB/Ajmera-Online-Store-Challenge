@@ -10,12 +10,12 @@ const Nav = () => {
     return(
         <AppBar position="static">
         <Toolbar sx={{display: "flex", flexDirection: "row", width: "100%", alignContent: "center", justifyContent: "center" }}>
-            <MenuIcon sx={{marginRight: "15%"}} fontSize="large" color="black"/>
-            <Typography variant="h5" component="a" >
+            <MenuIcon sx={{marginRight: "25%"}} fontSize="small" color="black"/>
+            <Typography variant="h5" component="a" fontSize="medium">
                 Website Title
             </Typography>
-            <SearchIcon sx={{marginLeft:"15%"}} fontSize="large"/>
-            <ShoppingCartOutlinedIcon fontSize="large" />
+            <SearchIcon sx={{marginLeft:"25%"}} fontSize="small"/>
+            <ShoppingCartOutlinedIcon fontSize="small" />
         </Toolbar>
         </AppBar>
     );
