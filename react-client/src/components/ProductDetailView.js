@@ -1,33 +1,53 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { Card, CardContent, CardHeader, CardMedia, Typography, Rating, Container, Chip } from "@mui/material";
 
-const ProductDetailView = (props) => {
 
+import {
+    useParams
+  } from "react-router-dom";
+
+const ProductDetailView = () => {
+
+    let { productID } = useParams();
+    const [product, setProduct] = useState({});
+
+    async function fetchData() {
+        let response = await axios.get(`https://fakestoreapi.com/products/${productID}`) //GET req
+        let data = response.data;
+        setProduct(data);
+        console.log(product.rating);
+    }
+
+    useEffect(() =>{
+       fetchData();
+    }, [product])
     return(
-        <Card sx={{}}>
+        <Card sx={{width:90/100}}>
             <CardContent>
                 <Typography sx={{marginBottom: -5}}>
-                    {props.product.category}
+                    {product.category}
                 </Typography>
             </CardContent>
             <CardHeader 
-                title={props.product.title} 
+                title={product.title} 
                 sx = {{height:1/6}}/>
             <CardMedia
                 component="img"
-                image={props.product.image}
-                alt={props.product.title}
+                image={product.image}
+                alt={product.title}
                 sx = {{height:1/3}}
             />
             <Container sx={{justifyContent:"flexStart", display:"flex", margin:"none", paddingRight: 10/100}}>
-                <Rating name="half-rating" defaultValue={props.product.rating.rate} precision={0.1} size="medium" />
-                <Chip label={props.product.rating.count} variant="outlined" size="small"/>
+                <Rating name="half-rating" value={product.rating ? product.rating.rate : 0} precision={0.1} size="medium" />
+                <Chip label={product.rating ? product.rating.count : 0} variant="outlined" size="small"/>
             </Container>
             <CardContent>
                 <Typography>
-                    ${props.product.price}
+                    ${product.price}
                 </Typography>
                 <Typography>
-                    {props.product.description}
+                    {product.description}
                 </Typography>
             </CardContent>
         </Card>

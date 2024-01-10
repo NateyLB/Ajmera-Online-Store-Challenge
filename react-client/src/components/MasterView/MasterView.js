@@ -31,7 +31,7 @@ const MasterView = () => {
 
     return(
         <Grid 
-            container spacing={1}
+            container spacing={1.5}
             sx={{margin:1/100}}
             >
             {createProductCards()}
