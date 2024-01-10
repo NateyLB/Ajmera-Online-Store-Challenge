@@ -7,6 +7,7 @@ const ProductMasterCard = (props) =>{
             <CardHeader title=""/>
             <CardMedia/>
         </Card>
+    )
 }
 
 export default ProductMasterCard;
