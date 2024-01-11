@@ -36,7 +36,6 @@ const ProductDetailView = () => {
         let response = await axios.get(`https://fakestoreapi.com/products/${productID}`) //GET req
         let data = response.data;
         setProduct(data);
-        console.log(product.rating);
     }
 
     useEffect(() =>{

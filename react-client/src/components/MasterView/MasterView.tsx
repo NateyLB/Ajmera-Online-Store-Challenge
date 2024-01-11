@@ -26,13 +26,9 @@ const MasterView = () => {
 
     //async function to get all product data
     async function fetchData() {
-        //delay fetching data so we can see loading animations
-        // setTimeout(async ()=>{
-            console.log("delayed for 5 seconds")
-            let response = await  axios.get(" https://fakestoreapi.com/products/") //GET req
+        let response = await  axios.get(" https://fakestoreapi.com/products/") //GET req
         let data = response.data;
         setProducts(data);
-        // }, 5000)
         
     }
     //fetch product data on page render
@@ -46,8 +42,8 @@ const MasterView = () => {
         if(products.length > 0){
             return products.map((product) => {
                 return (
-                    <Suspense fallback={<Grid item xs={6} sm={4} md={4} lg={3} xl={2} sx={{padding:0}} ><LoadingIcons.Puff stroke="black" speed="1" /></Grid>}>
-                    <ProductMasterCard product={product}/>
+                    <Suspense fallback={<Grid key={product.id} item xs={6} sm={4} md={4} lg={3} xl={2} sx={{padding:0}} ><LoadingIcons.Puff stroke="black" speed="1" /></Grid>}>
+                    <ProductMasterCard key={product.id.toString()} product={product}/>
                     </Suspense>
                 )
             })
