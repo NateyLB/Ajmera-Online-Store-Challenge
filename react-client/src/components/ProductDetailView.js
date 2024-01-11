@@ -47,8 +47,8 @@ const ProductDetailView = () => {
                 alt={product.title}
                 height={1}
                 sx = {{
-                        height:{xs:1,sm:.8, md:0.4, lg:.2,}, 
-                        width:{xs:1, sm:.8, md:0.4, lg:.2},
+                        height:{xs:.8,sm:.8, md:0.4, lg:.2,}, 
+                        width:{xs:.8, sm:.8, md:0.4, lg:.2},
                         marginLeft:{sm:"8vw"}
                     }}
             />

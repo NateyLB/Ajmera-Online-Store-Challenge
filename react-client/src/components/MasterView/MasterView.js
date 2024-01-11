@@ -33,7 +33,7 @@ const MasterView = () => {
         <Grid 
             container spacing={.5}
             // justifyContent="center" 
-            sx={{marginTop:1/100, width:1}}
+            sx={{marginTop:1/100, width:"95vw"}}
             >
             {createProductCards()}
         </Grid>
