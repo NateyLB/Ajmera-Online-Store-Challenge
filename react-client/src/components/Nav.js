@@ -8,7 +8,7 @@ const Nav = () => {
 
     return(
         <AppBar position="static" >
-        <Toolbar id="tool" sx={{padding:"0!important", display: "flex", flexDirection: "row", width: "100%", alignContent: "center", justifyContent: "center", paddingRight:0 }}>
+        <Toolbar id="tool" sx={{padding:"0!important", display: "flex", flexDirection: "row", width: "100%", alignContent: "center", justifyContent: "center" }}>
             <MenuIcon sx={{marginRight: "20%"}} fontSize="medium" color="black"/>
             <Link variant="h6" color="inherit" underline="none" href="/">
                 eCommerce
