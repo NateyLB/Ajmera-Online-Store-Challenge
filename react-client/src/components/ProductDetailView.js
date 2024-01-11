@@ -30,7 +30,7 @@ const ProductDetailView = () => {
                 // alignContent:"center"
                 }}>
             <CardContent>
-                <Typography sx={{marginBottom: -5}}>
+                <Typography sx={{marginBottom:{sm:-10}}}>
                     {product.category}
                 </Typography>
             </CardContent>
