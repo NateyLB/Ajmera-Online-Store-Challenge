@@ -2,7 +2,7 @@ import { React, useEffect, useState } from "react";
 import axios from "axios";
 
 import ProductMasterCard from "./ProductMasterCard.js";
-import { Grid } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 
 const MasterView = () => {
 
@@ -31,8 +31,9 @@ const MasterView = () => {
 
     return(
         <Grid 
-            container spacing={1.5}
-            sx={{margin:1/100}}
+            container spacing={.5}
+            // justifyContent="center" 
+            sx={{marginTop:1/100, width:1}}
             >
             {createProductCards()}
         </Grid>

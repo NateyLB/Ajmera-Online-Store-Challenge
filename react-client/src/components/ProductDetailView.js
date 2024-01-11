@@ -23,7 +23,10 @@ const ProductDetailView = () => {
        fetchData();
     }, [product])
     return(
-        <Card sx={{width:90/100}}>
+        <Card sx={{
+                width:90/100,
+                height: 1
+                }}>
             <CardContent>
                 <Typography sx={{marginBottom: -5}}>
                     {product.category}

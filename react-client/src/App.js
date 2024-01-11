@@ -8,7 +8,7 @@ import ProductDetailView from './components/ProductDetailView';
 
 function App() {
   return (
-    <div>
+    <div id="mainDiv" sx={{width:1, padding:0}}>
         <Nav/>
         <Routes>
           <Route  exact path="/" element={<MasterView/>} />

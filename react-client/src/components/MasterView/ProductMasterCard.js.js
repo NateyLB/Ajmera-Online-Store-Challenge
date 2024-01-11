@@ -3,8 +3,8 @@ import React from "react";
 
 const ProductMasterCard = (props) =>{
     return(
-        <Grid item xs={6} >
-        <Card sx={{height:1}}>
+        <Grid item xs={6} sm={4} md={4} lg={3} xl={2} sx={{padding:0}} >
+        <Card sx={{height:{xs:700, sm:1}, width:{xs:1, sm:1}, padding:0}}>
             <CardActionArea sx={{height:1, width:1}} href={`/product/${props.product.id}`}>
             <CardHeader 
                 title={props.product.title} 
