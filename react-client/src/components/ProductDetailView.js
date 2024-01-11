@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Card, CardContent, CardHeader, CardMedia, Typography, Rating, Container, Chip } from "@mui/material";
+import { Card, CardContent, CardHeader, CardMedia, Typography, Rating, Container, Chip, Box } from "@mui/material";
 
 
 import {
@@ -24,8 +24,10 @@ const ProductDetailView = () => {
     }, [product])
     return(
         <Card sx={{
-                width:90/100,
-                height: 1
+                width:"100vw",
+                height:{xs:1},
+                // justifyContent:"center",
+                // alignContent:"center"
                 }}>
             <CardContent>
                 <Typography sx={{marginBottom: -5}}>
@@ -34,17 +36,27 @@ const ProductDetailView = () => {
             </CardContent>
             <CardHeader 
                 title={product.title} 
-                sx = {{height:1/6}}/>
+                sx = {{height:{xs:"10vh"}}}/>
+            {/* <div style= {{ 
+                    display:"flex",
+                    justifyContent:"center"
+            }}> */}
             <CardMedia
                 component="img"
                 image={product.image}
                 alt={product.title}
-                sx = {{height:1/3}}
+                height={1}
+                sx = {{
+                        height:{xs:1,sm:.8, md:0.4, lg:.2,}, 
+                        width:{xs:1, sm:.8, md:0.4, lg:.2},
+                        marginLeft:{sm:"8vw"}
+                    }}
             />
-            <Container sx={{justifyContent:"flexStart", display:"flex", margin:"none", paddingRight: 10/100}}>
+            {/* </div> */}
+            <Box sx={{justifyContent:"flexStart", display:"flex", margin:"none", paddingLeft: 1.5}}>
                 <Rating name="half-rating" value={product.rating ? product.rating.rate : 0} precision={0.1} size="medium" />
                 <Chip label={product.rating ? product.rating.count : 0} variant="outlined" size="small"/>
-            </Container>
+            </Box>
             <CardContent>
                 <Typography>
                     ${product.price}
