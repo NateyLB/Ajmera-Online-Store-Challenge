@@ -4,19 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from "react-router-dom";
-import { ThemeProvider } from '@emotion/react';
 
-import {globalTheme} from './globalTheme';
 
 
 // const root = ReactDOM.createRoot(document.getElementById('root'));
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={globalTheme}>
     <Router>
       <App />
     </Router>
-    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

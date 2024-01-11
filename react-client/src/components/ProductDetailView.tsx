@@ -1,16 +1,36 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Card, CardContent, CardHeader, CardMedia, Typography, Rating, Container, Chip, Box } from "@mui/material";
+import { useParams } from "react-router-dom";
 
-
-import {
-    useParams
-  } from "react-router-dom";
+interface Product {
+    id: number,
+    title: string,
+    price: number,
+    description: string,
+    category: string,
+    image: string,
+    rating:{
+        rate: number,
+        count: number
+    }
+}
 
 const ProductDetailView = () => {
 
     let { productID } = useParams();
-    const [product, setProduct] = useState({});
+    const [product, setProduct] = useState<Product>({
+        id: -1,
+        title: "",
+        price: 0,
+        description: "",
+        category: "",
+        image: "",
+        rating:{
+            rate: 0,
+            count: 0
+        }
+    });
 
     async function fetchData() {
         let response = await axios.get(`https://fakestoreapi.com/products/${productID}`) //GET req
