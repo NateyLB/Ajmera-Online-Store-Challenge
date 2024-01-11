@@ -49,14 +49,14 @@ const ProductDetailView = () => {
                 // justifyContent:"center",
                 // alignContent:"center"
                 }}>
-            <CardContent>
-                <Typography sx={{marginBottom:{sm:-10}}}>
+            <CardContent sx={{height:{xs:"1vh"}, paddingBottom:{xs:0}}}>
+                <Typography sx={{height:{xs:"1vh"}}}>
                     {product.category}
                 </Typography>
             </CardContent>
             <CardHeader 
                 title={product.title} 
-                sx = {{height:{xs:"10vh"}}}/>
+                sx = {{height:{xs:"10vh", sm:"6vh"}, paddingTop:{xs:0}}}/>
             {/* <div style= {{ 
                     display:"flex",
                     justifyContent:"center"
@@ -69,7 +69,7 @@ const ProductDetailView = () => {
                 sx = {{
                         height:{xs:.8,sm:.8, md:0.4, lg:.2,}, 
                         width:{xs:.8, sm:.8, md:0.4, lg:.2},
-                        marginLeft:{sm:"8vw"}
+                        marginLeft:{xs:"8vw", md:"2vw"}
                     }}
             />
             {/* </div> */}
